@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hullitas Fashion - Registro de Mascotas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🐶Hullitas Fashion🐈</h1>
+        <p class="slogan">¡Consiente a tu peludito con estilo!</p>
+    </header>
+    <main>
+        <section>
+            <form id="formularioMascotas" novalidate>
+                <label for="nombreCliente">Nombre del cliente:</label>
+                <input type="text" id="nombreCliente" name="nombreCliente" required minlength="3" placeholder="Ej: Luis Perez" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,40}" autofocus>
+                <span class="mensaje-error" id="error-nombreCliente"></span>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required placeholder="Ej: luisperez51@gmail.com">
+                <span class="mensaje-error" id="error-correo"></span>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" maxlength="12" required placeholder="Ej: 3451485456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <small>Formato: 3451485456</small>
+                <span class="mensaje-error" id="error-telefono"></span>
+
+                <label for="tipoMascota">Tipo de mascota:</label>
+                <select id="tipoMascota" name="tipoMascota" required>
+                    <option value="">Selecciona</option>
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                </select>
+                <span class="mensaje-error" id="error-tipoMascota"></span>
+
+                <label>Accesorios a comprar:</label>
+                <div>
+                    <label><input type="checkbox" name="accesorios" value="collar"> Collar</label>
+                    <label><input type="checkbox" name="accesorios" value="juguete"> Juguete</label>
+                    <label><input type="checkbox" name="accesorios" value="cama"> Cama</label>
+                    <label><input type="checkbox" name="accesorios" value="comida"> Comida</label>
+                </div>
+
+                <label for="fechaHoraPedido">Fecha y hora del pedido:</label>
+                <input type="datetime-local" id="fechaHoraPedido" name="fechaHoraPedido">
+
+                <label for="cantidad">Cantidad de productos:</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" max="20">
+
+                <label for="metodoPago">Método de pago:</label>
+                <select id="metodoPago" name="metodoPago" required>
+                    <option value="">Selecciona un método</option>
+                    <option value="contra entrega">Pago contra entrega</option>
+                    <option value="nequi">Nequi</option>
+                    <option value="tarjeta de credito">Tarjeta de crédito</option>
+                </select>
+                <span class="mensaje-error" id="error-metodoPago"></span>
+
+                <label for="urlProducto">URL del producto favorito:</label>
+                <input type="url" id="urlProducto" name="urlProducto" placeholder="https://">
+
+                <label for="contrasena">Contraseña para tu cuenta:</label>
+                <input type="password" id="contrasena" name="contrasena" required minlength="8">
+                <span class="mensaje-error" id="error-contrasena"></span>
+
+                <label for="fotoMascota">Foto de tu mascota:</label>
+                <input type="file" id="fotoMascota" name="fotoMascota" accept="image/*">
+
+                <label>
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    Acepto los términos y condiciones
+                </label>
+                <span class="mensaje-error" id="error-terminos"></span>
+
+                <input type="submit" id="btnEnviar" value="Enviar">
+                <input type="reset" value="Limpiar">
+            </form>
+            <div id="mensaje-exito" style="display:none; color: #5cb85c; margin-top:20px;">
+                ¡Formulario enviado correctamente!
+            </div>
+            <div id="resumenDatos" style="display:none;">
+                <h2>Resumen de tu pedido</h2>
+                <div id="contenidoResumen"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Hullitas Fashion. Tu tienda de confianza</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
